@@ -2,9 +2,9 @@ const MongoClient = require('mongodb').MongoClient;
 
 // Bad practice: don't keep sensitive data in git
 const CONFIG = {
-  USER: 'vic',
-  PASS: 'G7h6k296kZfwrnQf',
-  URL: 'cms-cluster0.y1gul.mongodb.net',
+  USER: 'ciprian',
+  PASS: 'My4bJRQPTfZRkRzO',
+  URL: 'cluster0.suxep.mongodb.net',
   DB: 'app',
 };
 
@@ -21,4 +21,6 @@ client
   .then(() => {
     const watchlist = client.db(CONFIG.DB).collection('watchlist');
     module.exports.watchlist = watchlist;
+    const users = client.db(CONFIG.DB).collection('users');
+    module.exports.users = users;
   });
